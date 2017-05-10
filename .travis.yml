@@ -10,8 +10,8 @@ addons:
     - openam.example.com
 
 before_install:
-- docker build -t qmoulini/openam .
-- docker run -d -h openam.example.com --name openam -p 127.0.0.1:8080:8080 qmoulini/openam
+- docker build -t qmoulini/openam2 .
+- docker run -d -h openam.example.com --name openam -p 127.0.0.1:8080:8080 qmoulini/openam2
 - until curl -Is http://127.0.0.1:8080/openam/isAlive.jsp | head -n 1 | grep "200 OK" >/dev/null; do sleep 5 ; done
 - docker ps -a
 
